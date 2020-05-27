@@ -1,0 +1,36 @@
+{
+  "name": "babel_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d js",
+    "start": "http-server",
+    "browserify": "browserify js/main.js -o js/bundle.js -t [ babelify --extensions .babel ]",
+    "dev": "yarn run build &&  yarn run browserify &&  yarn run start",
+    "watch": "nodemon --watch src --exec yarn run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.0",
+    "@babel/core": "^7.10.0",
+    "@babel/plugin-transform-runtime": "^7.10.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.10.0",
+    "@babel/preset-react": "^7.10.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "http-server": "^0.12.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.10.0",
+    "browserify": "^16.5.1",
+    "nodemon": "^2.0.4"
+  }
+}
